@@ -1,4 +1,4 @@
-const API_BASE = "https://web-backend-9vl0.onrender.com/api";
+const API_BASE = import.meta.env.VITE_API_URL || "/api";
 
 /**
  * Send an event to backend
