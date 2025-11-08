@@ -12,7 +12,7 @@ import Product from "./pages/Product";
 import About from "./pages/About";
 import Analytics from "./pages/Analytics";
 
-const API_BASE = import.meta.env.VITE_API_URL || "/api";
+const API_BASE = "https://web-backend-9vl0.onrender.com/api";
 
 /* ---------------- Page Time Tracker Hook ---------------- */
 function usePageTimer() {

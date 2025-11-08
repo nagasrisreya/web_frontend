@@ -16,6 +16,8 @@ import {
   Line,
 } from "recharts";
 
+const API_BASE = "https://web-backend-9vl0.onrender.com/api";
+
 export default function Analytics() {
   const [data, setData] = useState(null);
   const [timeSeries, setTimeSeries] = useState(null);
@@ -46,7 +48,7 @@ export default function Analytics() {
   useEffect(() => {
     const fetchAnalytics = async () => {
       try {
-        const res = await fetch("/api/analytics");
+        const res = await fetch(`${API_BASE}/analytics`);
         if (!res.ok) throw new Error("Server returned an error");
         const json = await res.json();
         console.log("✅ Analytics data:", json);
@@ -59,7 +61,7 @@ export default function Analytics() {
 
     const fetchTimeSeries = async () => {
       try {
-        const res = await fetch("/api/time-series");
+        const res = await fetch(`${API_BASE}/time-series`);
         if (!res.ok) throw new Error("Server returned an error");
         const json = await res.json();
         console.log("✅ Time-series data:", json);
